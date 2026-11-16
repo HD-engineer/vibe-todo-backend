@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="오늘 할 일을 간단하게 기록하고 관리하세요." />
+    <title>오늘의 할 일</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="todo-card" aria-labelledby="page-title">
+        <header>
+          <p class="eyebrow">MY DAY</p>
+          <h1 id="page-title">오늘의 할 일</h1>
+          <p class="date" id="today"></p>
+        </header>
+
+        <form id="todo-form" class="add-form">
+          <label class="sr-only" for="todo-input">새로운 할 일</label>
+          <input id="todo-input" name="title" maxlength="500" placeholder="무엇을 해야 하나요?" required />
+          <button type="submit" aria-label="할 일 추가">추가</button>
+        </form>
+
+        <div class="summary" aria-live="polite">
+          <span id="remaining">할 일을 불러오는 중...</span>
+          <button id="refresh" class="text-button" type="button">새로고침</button>
+        </div>
+
+        <ul id="todo-list" class="todo-list" aria-label="할 일 목록"></ul>
+        <p id="empty-state" class="empty-state" hidden>아직 할 일이 없어요.<br />가볍게 하나 추가해 보세요.</p>
+        <p id="message" class="message" role="alert" hidden></p>
+      </section>
+    </main>
+    <script src="/app.js" defer></script>
+  </body>
+</html>
